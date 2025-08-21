@@ -1,0 +1,48 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    background: url("/static/piks/cyber-security-concept-digital-art\ \(1\).jpg"), -webkit-linear-gradient(bottom, #0250c5, #d43f8d);
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.intro {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.faq h2 {
+    color: #34495e;
+    margin-top: 25px;
+}
+
+.faq p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.faq a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faq a:hover {
+    text-decoration: underline;
+}
