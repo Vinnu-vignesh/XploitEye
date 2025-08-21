@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan History - ExploitEye</title>
+    <link rel="stylesheet" href="/static/scanHistory.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scan History</h1>
+
+        {% if scans %}
+            <div class="history-grid">
+                {% for scan in scans %}
+                    <div class="scan-card">
+                        <h2>{{ scan.target_url }}</h2>
+                        <p><strong>Date:</strong> {{ scan.timestamp }}</p>
+                        <ul>
+                            {% for vuln in scan.vulnerabilities %}
+                                <li><strong>{{ vuln.vuln }}</strong>: {{ vuln.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No scans found yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

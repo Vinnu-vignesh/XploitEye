@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scanning Live - ExploitEye</title>
+  <style>
+    body {
+      background: #0f1624;
+      color: #00ffd5;
+      font-family: monospace;
+      padding: 2rem;
+    }
+
+    #output {
+      white-space: pre-wrap;
+      background: #101c2a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffd5;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔍 Live Scanning Output</h2>
+  <div id="output">Starting scan...</div>
+
+  <script>
+    const outputDiv = document.getElementById("output");
+    const target = "{{ target }}";
+
+    fetch(`/stream?target=${target}`)
+      .then(response => response.body.getReader())
+      .then(reader => {
+        const decoder = new TextDecoder();
+        function readChunk() {
+          reader.read().then(({ done, value }) => {
+            if (done) return;
+            outputDiv.innerText += decoder.decode(value);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+            readChunk();
+          });
+        }
+        readChunk();
+      });
+  </script>
+</body>
+</html>

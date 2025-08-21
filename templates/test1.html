@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExploitEye</title>
+  <link rel="stylesheet" href="/static/test1Css.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/static/piks/padlock_1518834.png">
+
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">ExploitEye</div>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/aboutUs">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/help">Help</a>
+      </div>
+    </nav>
+    
+    <div class="auth-buttons">
+      <a href="/login"><button class="login">Log in</button></a>
+      <a href="/signup"><button class="signup">Sign up</button></a>
+    </div>
+    
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-left">
+          <h1>Trusted vulnerability scans</h1>
+          <h2>without the hassle</h2>
+          <p>
+            Scan your websites, servers and networks.<br/>
+            get your ready vulnerability scan report!
+          </p>
+    
+          <div class="scan-box">
+            <form action="/scan" method="POST">
+              <label class="scan-label">Scan your web now!</label><br/>
+              <input type="text" name="url" placeholder="Enter a URL, IP address or hostname" required />
+              <br/><br/>
+              <button type="submit">Start Scan</button>
+            </form>
+          </div>
+        </div>
+    
+        <div class="hero-right">
+          <img src="/static/piks/10222603.jpg" alt="Cyber Image" height="400px" width="600px"/>
+        </div>
+      </div>
+    </section>
+    
+
+    <div class="background-shape"></div>
+  </main>
+</body>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+
+</html>

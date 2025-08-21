@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+
+  <!-- External Styles and Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/static/assets/css/SAMS-login.css">
+  <link rel="icon" type="image/x-icon" href="/static/piks/padlock_1518834.png">
+</head>
+<body>
+  <div class="form-container">
+    <form action="/login" id="form" method="post">
+      <h3>Login</h3>
+
+      <br />
+
+      <i class="bx bx-user"></i>
+      <input type="text" name="username" placeholder="Username" required />
+      <br />
+
+      <i class="bx bx-at"></i>
+      <input type="email" name="email" placeholder="Email" required />
+      <br />
+
+      <i class="bx bx-lock"></i>
+      <input type="password" name="password" placeholder="Password" required />
+      <br />
+
+      <input type="submit" value="Login" />
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('form');
+    form.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 12;
+      const y = (window.innerHeight / 2 - e.pageY) / 12;
+      form.style.transform = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+    });
+  </script>
+</body>
+</html>
